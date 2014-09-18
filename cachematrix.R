@@ -26,7 +26,9 @@ makeCacheMatrix <- function(mat = matrix(nrow = 0, ncol = 0)) {
 
 
 ## The following function calculates the inverse of the special "matrix"
-##   which was created with the makeCacheMatrix() function
+##   which was created with the makeCacheMatrix() function.
+## If inverse is already calculated, it is returned;
+##   else it is calculated, assigned to inv, and is then returned.
 
 cacheSolve <- function(mat, ...) {
     inv <- mat$getinv()
@@ -35,7 +37,7 @@ cacheSolve <- function(mat, ...) {
         return (inv)
     }
     data <- mat$get()
-    inv <- solve(data)
+    inv <- solve(data, ...)
     mat$setinv(inv)
     inv
 }
