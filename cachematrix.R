@@ -1,4 +1,4 @@
-## This Programming Assignment takes advantage of the scoping rules of the R language
+## This Programming Assignment takes advantage of the scoping rules in R language
 ##   and how they can be manipulated to preserve state inside of an R object.
 ## Below are two functions that are used to create a special object
 ##   that stores a matrix and cache's its inverse.
@@ -37,7 +37,7 @@ cacheSolve <- function(mat, ...) {
         return (inv)
     }
     data <- mat$get()
-    inv <- solve(data, ...)
+    inv <- solve(data, ...)     # solve() function calculates inverse of a matrix
     mat$setinv(inv)
     inv
 }
